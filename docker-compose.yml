@@ -4,7 +4,9 @@ services:
   laravel-app:
     container_name: laravelapp
     image: lucasunzer/laravel-php:1.0.0
-    build: .
+    build: 
+      context: .
+      dockerfile: docker/php/Dockerfile
     ports:
       - "8000:8000"
     environment:
