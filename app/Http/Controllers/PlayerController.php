@@ -17,7 +17,7 @@ class PlayerController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:players,email',
+            'email' => 'required|email|unique:players,email,' . $player->id,
             'telefone' => 'nullable|string|max:20',
         ]);
 
@@ -44,7 +44,6 @@ class PlayerController extends Controller
 
     public function delete(Player $player) // Delete a specific player
     {
-        $player = Player::findOrFail($player->id);
         $player->delete();
         return response()->json(null, 204);
     }
