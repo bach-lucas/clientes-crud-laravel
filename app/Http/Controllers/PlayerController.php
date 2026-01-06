@@ -27,7 +27,6 @@ class PlayerController extends Controller
 
     public function show(Player $player) // Return a specific player
     {
-        $player = Player::findOrFail($player);
         return response()->json($player);
     }
 
