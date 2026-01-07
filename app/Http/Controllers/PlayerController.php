@@ -16,9 +16,9 @@ class PlayerController
     public function store(Request $request) // Create a new player
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:players,email',
-            'telefone' => 'nullable|string|max:20',
+            'name' => 'required|string',
+            'email' => 'required|string',
+            'telefone' => 'nullable|string',
         ]);
 
         $player = Player::create($validated);
@@ -33,9 +33,9 @@ class PlayerController
     public function update(Request $request, Player $player) // Update a specific player
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:players,email,',
-            'telefone' => 'nullable|string|max:20',
+            'name' => 'required|string',
+            'email' => 'required|string',
+            'telefone' => 'nullable|string',
         ]);
 
         $player->update($validatedData);
