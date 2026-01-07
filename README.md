@@ -123,7 +123,9 @@ Eles cobrem:
 
 ---
 
-## 📝 Observações
+## 📝 Observações Adicionais
+
+* Para o melhor funcionamento da API, insira em formado **JSON** `nome` `email` e `telefone(Irá funcionar se não houver telefone)`. Caso não tenham essas informações, a API irá retornar um erro esperado para tal ocorrência.*
 
 * O projeto tem finalidade **educacional e demonstrativa**.
 * Não foram aplicados padrões como **PSR-12** ou tratamento centralizado de exceções, pois não faziam parte do escopo.
