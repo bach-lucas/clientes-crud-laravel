@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Player;
 use Illuminate\Http\Request;
 
-class PlayerController extends Controller
+class PlayerController
 {
     public function index() // Return all players
     {
@@ -17,7 +17,7 @@ class PlayerController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:players,email,' . $player->id,
+            'email' => 'required|email|unique:players,email',
             'telefone' => 'nullable|string|max:20',
         ]);
 
