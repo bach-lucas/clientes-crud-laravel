@@ -1,8 +1,6 @@
-version: '3.9'
-
 services:
-  laravel-app:
-    container_name: laravelapp
+  app:
+    container_name: app
     image: lucasunzer/laravel-php:1.0.4
     build: 
       context: .
