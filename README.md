@@ -130,6 +130,12 @@ Eles cobrem:
 * O projeto tem finalidade **educacional e demonstrativa**.
 * Foram aplicados padrões como **PSR-12** ou tratamento centralizado de exceções.
 * O ambiente está preparado para facilitar testes locais via Docker.
+* Caso esteja recebendo um status `200:OK` lembre-se de configurar o POSTMAN para:
+| Key          | Value            |
+| ------------ | ---------------- |
+| Accept       | application/json |
+| Content-Type | application/json |
+
 
 ---
 
