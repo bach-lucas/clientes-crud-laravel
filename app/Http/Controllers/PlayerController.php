@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Player;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
 
 class PlayerController
 {
@@ -17,7 +19,11 @@ class PlayerController
     {
         $validated = $request->validate([
             'name' => 'required|string',
-            'email' => 'required|string',
+            'email' => [
+                        'required',
+                        'email',
+                        Rule::unique('players', 'email')->ignore($players->id),
+            ],
             'telefone' => 'nullable|string',
         ]);
 
