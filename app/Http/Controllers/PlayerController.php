@@ -19,11 +19,7 @@ class PlayerController
     {
         $validated = $request->validate([
             'name' => 'required|string',
-            'email' => [
-                        'required',
-                        'email',
-                        Rule::unique('players', 'email')->ignore($players->id),
-            ],
+            'email' => 'required|email|unique:players,email',
             'telefone' => 'nullable|string',
         ]);
 
@@ -41,10 +37,10 @@ class PlayerController
         $validatedData = $request->validate([
             'name' => 'required|string',
             'email' => [
-                        'required',
-                        'email',
-                        Rule::unique('players', 'email')->ignore($players->id),
-            ],
+                'required',
+                'email',
+                 Rule::unique('players', 'email')->ignore($player->id),
+        ],
             'telefone' => 'nullable|string',
         ]);
 
